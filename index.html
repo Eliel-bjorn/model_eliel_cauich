@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>RoyalVillas - Our Team</title>
+</head>
+<body>
+    <header class="ancho">
+        <figure>
+            <img src="imagenes/logo.jpg" alt="">
+        </figure>
+    </header>
+    <section class="team-section ancho">
+        <div class="content-wrapper">
+            <div class="text-content">
+                <p class="subtitle">Our Team</p>
+                <h1 class="main-title">A Dedicated Team of Experts</h1>
+                <p class="intro-text">
+                    Passion, experience and a fierce commitment to education are
+                    the cornerstones of our success in the beauty industry
+                </p>
+                <p class="description-text">
+                    We believe that being the largest SPA in the area is not enough
+                    in itself to satisfy the needs of our customers. For this reason
+                    we have built up a staff of specialized professionals who are proud
+                    to welcome you to our hotel, present What We Do, listen to your needs
+                    and guarantee well-being and relaxation during your stay at our SPA Resort.
+                </p>
+                <p class="description-text">
+                    Everyone in our team is a certified specialist capable of delivering a unique
+                    service of high quality you won't find anywhere else in modern spa and resort industry.
+                </p>
+
+                <div class="modal-button-wrapper">
+                    <a href="#" id="abrir_modal" class="modal-btn">MODAL <i class="fa-solid fa-bars"></i></a>
+                </div>
+            </div>
+
+            <div class="team-cards">
+                <article class="team-member">
+                    <figure class="member-photo">
+                        <img src="imagenes/foto1.jpg" alt="Jessica Cooper">
+                    </figure>
+                    <h2 class="member-name">Jessica Cooper</h2>
+                    <p class="member-role">Esthetician</p>
+                    <div class="social-icons">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-pinterest-p"></i>
+                    </div>
+                    <div class="contact-button-wrapper">
+                        <a href="#" class="contact-btn">GET IN TOUCH</a>
+                    </div>
+                </article>
+
+                <article class="team-member">
+                    <figure class="member-photo">
+                        <img src="imagenes/foto2.jpg" alt="Robert Wagner">
+                    </figure>
+                    <h2 class="member-name">Robert Wagner</h2>
+                    <p class="member-role">Hairdresser</p>
+                    <div class="social-icons">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-pinterest-p"></i>
+                    </div>
+                    <div class="contact-button-wrapper">
+                        <a href="#" class="contact-btn">GET IN TOUCH</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modal -->
+    <div id="modal" class="modal-overlay">
+        <div class="modal-container">
+            <button id="cerrar_modal" class="close-modal">&times;</button>
+            <h2 class="modal-title">Contact Us</h2>
+            <p class="modal-description">
+                If you have any questions concerning our services, please fill out the contact form below.
+            </p>
+            <form class="modal-form">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Name *" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="E-mail *" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" rows="5" placeholder="Message *" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">SUBMIT</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="ancho footer-bar"></footer>
+
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <!--funciones js-->
+    <script>
+        $(document).ready(function(){
+            // Abrir modal
+            $("#abrir_modal").click(function(e){
+                e.preventDefault();
+                $("#modal").addClass("mostrar");
+            });
+
+            // Cerrar modal con botón X
+            $("#cerrar_modal").click(function(){
+                $("#modal").removeClass("mostrar");
+            });
+
+            // Cerrar modal al hacer click fuera del contenedor
+            $("#modal").click(function(e){
+                if(e.target.id === "modal"){
+                    $("#modal").removeClass("mostrar");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
